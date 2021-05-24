@@ -1,30 +1,30 @@
-import { fetchPosts, fetchUser } from "./api";
+import { fetchPosts, fetchUser } from './api';
 import {
   renderLoadingIndicatorInDOM,
   removeLoadingIndicatorFromDOM,
-} from "./loadingIndicator";
+} from './loadingIndicator';
 import { post } from './types/post';
 import { user } from './types/user';
 
-const createCard = (post:post, user:user): HTMLLIElement => {
-  const container = document.createElement("li") as HTMLLIElement;
-  container.className = "max-w-xl mb-8";
+const createCard = (post: post, user: user): HTMLLIElement => {
+  const container = document.createElement('li') as HTMLLIElement;
+  container.className = 'max-w-xl mb-8';
 
-  const cardTitle = document.createElement("h2") as HTMLHeadingElement;
-  cardTitle.className = "text-3xl font-bold mb-4";
+  const cardTitle = document.createElement('h2') as HTMLHeadingElement;
+  cardTitle.className = 'text-3xl font-bold mb-4';
   cardTitle.textContent = post.title;
 
-  const smallPrintContainer = document.createElement("div") as HTMLDivElement;
-  smallPrintContainer.className = "mb-2 leading-none";
-  const bySpan = document.createElement("span") as HTMLSpanElement;
-  bySpan.textContent = "By: ";
-  const authorSpan = document.createElement("span") as HTMLSpanElement;
+  const smallPrintContainer = document.createElement('div') as HTMLDivElement;
+  smallPrintContainer.className = 'mb-2 leading-none';
+  const bySpan = document.createElement('span') as HTMLSpanElement;
+  bySpan.textContent = 'By: ';
+  const authorSpan = document.createElement('span') as HTMLSpanElement;
   authorSpan.textContent = user.name;
   smallPrintContainer.appendChild(bySpan);
   smallPrintContainer.appendChild(authorSpan);
 
-  const bodyContainer = document.createElement("div") as HTMLDivElement;
-  const body = document.createElement("p") as HTMLParagraphElement;
+  const bodyContainer = document.createElement('div') as HTMLDivElement;
+  const body = document.createElement('p') as HTMLParagraphElement;
   body.textContent = post.body;
   bodyContainer.appendChild(body);
 
@@ -36,7 +36,7 @@ const createCard = (post:post, user:user): HTMLLIElement => {
 };
 
 const renderCards = async (): Promise<void> => {
-  const cardList = document.querySelector(".card-list") as HTMLUListElement;
+  const cardList = document.querySelector('.card-list') as HTMLUListElement;
   renderLoadingIndicatorInDOM(cardList);
 
   const posts = await fetchPosts();

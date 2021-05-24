@@ -7,10 +7,12 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.2",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.2",
     "postcss": "^8.2.15",
     "tailwindcss": "^2.1.2",
