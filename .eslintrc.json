@@ -10,7 +10,6 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -23,6 +22,7 @@
     "ecmaFeatures": {},
     "rules": {
       "@typescript-eslint/indent": ["error", 2],
+      "no-console": [1, { "allow": ["warn", "error"] }],
       "prettier/prettier": "error"
     }
   }

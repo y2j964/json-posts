@@ -1,11 +1,13 @@
-import DOMPurify from "dompurify";
+import DOMPurify from 'dompurify';
 
-const loadingIndicatorContainer = document.createElement("div") as HTMLDivElement;
-loadingIndicatorContainer.className = 
-  "loading-indicator flex justify-center items-center";
-loadingIndicatorContainer.setAttribute("role", "status");
+const loadingIndicatorContainer = document.createElement(
+  'div'
+) ;
+loadingIndicatorContainer.className =
+  'loading-indicator flex justify-center items-center';
+loadingIndicatorContainer.setAttribute('role', 'status');
 
-const loadingIndicatorTemplate : string = `
+const loadingIndicatorTemplate = `
       <span class="sr-only" tabIndex="-1" ref={ref}>
         Loading...
       </span>
@@ -262,20 +264,22 @@ const loadingIndicatorTemplate : string = `
     </div>
 `;
 
-const cleanLoadingIndicatorTemplate : string = DOMPurify.sanitize(
+const cleanLoadingIndicatorTemplate: string = DOMPurify.sanitize(
   loadingIndicatorTemplate
 );
 loadingIndicatorContainer.innerHTML = cleanLoadingIndicatorTemplate;
 
-const renderLoadingIndicatorInDOM = (targetElSibbling:HTMLElement): void => {
+const renderLoadingIndicatorInDOM = (targetElSibbling: HTMLElement): void => {
   targetElSibbling.insertAdjacentElement(
-    "beforebegin",
+    'beforebegin',
     loadingIndicatorContainer
   );
 };
 
 const removeLoadingIndicatorFromDOM = (): void => {
-  const loadingIndicator = document.querySelector(".loading-indicator") as HTMLDivElement;
+  const loadingIndicator = document.querySelector(
+    '.loading-indicator'
+  ) as HTMLDivElement;
   loadingIndicator.remove();
 };
 

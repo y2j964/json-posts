@@ -1,4 +1,4 @@
-import "../css/main.css";
-import renderCards from "./renderCards";
+import '../css/main.css';
+import renderCards from './renderCards';
 
-renderCards();
+void renderCards();
