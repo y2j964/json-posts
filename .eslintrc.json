@@ -4,11 +4,11 @@
     "browser": true
   },
   "settings": {},
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,11 +19,10 @@
     "project": "./tsconfig.json",
     "ecmaVersion": 6,
     "sourceType": "module",
-    "ecmaFeatures": {},
-    "rules": {
-      "@typescript-eslint/indent": ["error", 2],
-      "no-console": [1, { "allow": ["warn", "error"] }],
-      "prettier/prettier": "error"
-    }
+    "ecmaFeatures": {}
+  },
+  "rules": {
+    "@typescript-eslint/indent": ["error", 2],
+    "no-console": [1, { "allow": ["warn", "error"] }]
   }
 }
