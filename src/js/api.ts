@@ -9,7 +9,6 @@ const fetchPosts = (): Promise<post[]> =>
 const fetchUser = (userId: number): Promise<user> =>
   fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
     .then((response) => response.json())
-    .then((user: user) => user)
-    .catch((err: { message: string }) => console.log(`error: ${err.message}`));
+    .then((user: user) => user);
 
 export { fetchPosts, fetchUser };

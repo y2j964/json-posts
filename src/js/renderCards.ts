@@ -7,8 +7,6 @@ import { post } from './types/post';
 import { isReqError } from './types/reqError';
 import { user } from './types/user';
 
-console.log('we');
-
 const createCard = (post: post, user: user): HTMLLIElement => {
   const container = document.createElement('li');
   container.className = 'max-w-xl mb-8';
