@@ -1,8 +1,6 @@
 import DOMPurify from 'dompurify';
 
-const loadingIndicatorContainer = document.createElement(
-  'div'
-) ;
+const loadingIndicatorContainer = document.createElement('div');
 loadingIndicatorContainer.className =
   'loading-indicator flex justify-center items-center';
 loadingIndicatorContainer.setAttribute('role', 'status');
@@ -265,7 +263,9 @@ const loadingIndicatorTemplate = `
 `;
 
 const cleanLoadingIndicatorTemplate: string = DOMPurify.sanitize(
-  loadingIndicatorTemplate
+  loadingIndicatorTemplate,
+  // if don't add tag, animation will not work
+  { ADD_TAGS: ['animate'] }
 );
 loadingIndicatorContainer.innerHTML = cleanLoadingIndicatorTemplate;
 
